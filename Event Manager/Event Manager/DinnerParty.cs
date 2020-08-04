@@ -9,9 +9,18 @@ namespace Event_Manager
     class DinnerParty
     {
         const int CostOfFoodPerPerson = 25;
-        public int NumberOfPeople { get; set; }
-        public bool FancyDecorations { get; set; }
-        public bool HealthyOption { get; set; }
+        private int NumberOfPeople; 
+        private bool FancyDecorations;
+        private bool HealthyOption;
+
+        public int getNumberOfPeople() { return NumberOfPeople; }
+        public bool getFancyDecorations() { return FancyDecorations; }
+        public bool getHealthyOption() { return HealthyOption; }
+
+        public void setNumberOfPeople(int numberOfPeople) { NumberOfPeople = numberOfPeople; }
+        public void setFancyDecorations(bool fancyDecorations) { FancyDecorations = fancyDecorations; }
+        public void setHealthyOption(bool healthyOption) { HealthyOption = healthyOption; }
+
 
         public DinnerParty (int numberOfPeople, bool healthyOption, bool fancyDecorations)
         {
