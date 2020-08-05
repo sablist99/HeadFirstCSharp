@@ -6,20 +6,9 @@ using System.Threading.Tasks;
 
 namespace Event_Manager
 {
-    class DinnerParty
+    class DinnerParty : Party
     {
-        const int CostOfFoodPerPerson = 25;
-        private int NumberOfPeople; 
-        private bool FancyDecorations;
-        private bool HealthyOption;
-
-        public int getNumberOfPeople() { return NumberOfPeople; }
-        public bool getFancyDecorations() { return FancyDecorations; }
-        public bool getHealthyOption() { return HealthyOption; }
-
-        public void setNumberOfPeople(int numberOfPeople) { NumberOfPeople = numberOfPeople; }
-        public void setFancyDecorations(bool fancyDecorations) { FancyDecorations = fancyDecorations; }
-        public void setHealthyOption(bool healthyOption) { HealthyOption = healthyOption; }
+        public bool HealthyOption { get; set; }
 
 
         public DinnerParty (int numberOfPeople, bool healthyOption, bool fancyDecorations)
@@ -29,17 +18,9 @@ namespace Event_Manager
             HealthyOption = healthyOption;
         }
 
-        private decimal calculateCostOfDecoration()
-        {
-            decimal CCOD;
-            if (FancyDecorations)
-                CCOD = (NumberOfPeople * 15.00M) + 50M;
-            else
-                CCOD = (NumberOfPeople * 7.50M) + 30M;
-            return CCOD;
-        }
+        
 
-        private decimal calculateCostOfBeveragesPerPerson()
+        private decimal CalculateCostOfBeveragesPerPerson()
         {
             decimal CCOBPP;
             if (HealthyOption)
@@ -49,12 +30,12 @@ namespace Event_Manager
             return CCOBPP;
         }
 
-        public decimal Cost
+        override public decimal Cost
         {
             get
             {
-                decimal totalCost = calculateCostOfDecoration();
-                totalCost += ((calculateCostOfBeveragesPerPerson() + CostOfFoodPerPerson) * NumberOfPeople);
+                decimal totalCost = base.Cost;
+                totalCost += CalculateCostOfBeveragesPerPerson() * NumberOfPeople;
                 if (HealthyOption)
                     totalCost *= 0.95M;
                 return totalCost;

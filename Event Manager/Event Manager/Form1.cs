@@ -42,37 +42,37 @@ namespace Event_Manager
 
         private void numberOfBox_ValueChanged(object sender, EventArgs e)
         {
-            dinnerParty.setNumberOfPeople((int)numberOfBox.Value);
+            dinnerParty.NumberOfPeople = (int)numberOfBox.Value;
             DisplayDinnerPartyCost();
         }
 
         private void fancyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.setFancyDecorations(fancyBox.Checked);
+            dinnerParty.FancyDecorations = fancyBox.Checked;
             DisplayDinnerPartyCost();
         }
 
         private void healthyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.setHealthyOption(healthyBox.Checked);
+            dinnerParty.HealthyOption = healthyBox.Checked;
             DisplayDinnerPartyCost();
         }
 
         private void cakeWriting_TextChanged(object sender, EventArgs e)
         {
-            birthdayParty.setCakeWriting(cakeWriting.Text);
+            birthdayParty.CakeWriting = cakeWriting.Text;
             DisplayBirthdayPartyCost();
         }
 
         private void fancyBirthday_CheckedChanged(object sender, EventArgs e)
         {
-            birthdayParty.setFancyDecorations(fancyBirthday.Checked);
+            birthdayParty.FancyDecorations = fancyBirthday.Checked;
             DisplayBirthdayPartyCost();
         }
 
         private void numberOfPeopleBirthday_ValueChanged(object sender, EventArgs e)
         {
-            birthdayParty.setNumberOfPeople((int)numberOfPeopleBirthday.Value);
+            birthdayParty.NumberOfPeople = (int)numberOfPeopleBirthday.Value;
             DisplayBirthdayPartyCost();
         }
     }
