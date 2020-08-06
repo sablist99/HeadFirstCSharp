@@ -33,12 +33,12 @@ namespace Beehive_management_system
             workerBeeJob.SelectedIndex = 0;
 
             Worker[] workers = new Worker[4];
-            workers[0] = new Worker(new string[] { NECTAR_COLLECTOR, HONEY_MANUFACTURING });
-            workers[1] = new Worker(new string[] { EGG_CARE, BABY_BEE_TUTORING });
-            workers[2] = new Worker(new string[] { HIVE_MAINTENANCE, STRING_PATROL });
-            workers[3] = new Worker(new string[] { NECTAR_COLLECTOR, HONEY_MANUFACTURING, EGG_CARE, BABY_BEE_TUTORING, HIVE_MAINTENANCE, STRING_PATROL });
+            workers[0] = new Worker(new string[] { NECTAR_COLLECTOR, HONEY_MANUFACTURING }, 175);
+            workers[1] = new Worker(new string[] { EGG_CARE, BABY_BEE_TUTORING }, 114);
+            workers[2] = new Worker(new string[] { HIVE_MAINTENANCE, STRING_PATROL }, 149);
+            workers[3] = new Worker(new string[] { NECTAR_COLLECTOR, HONEY_MANUFACTURING, EGG_CARE, BABY_BEE_TUTORING, HIVE_MAINTENANCE, STRING_PATROL }, 155);
 
-            queen = new Queen(workers);
+            queen = new Queen(workers, 275);
         }
 
         private void assign_Click(object sender, EventArgs e)
