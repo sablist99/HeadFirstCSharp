@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Home
 {
-    class RoomWithDoor : Room, IHasExteriorDoor
+    class RoomWithDoor : RoomWithHidingPlace, IHasExteriorDoor
     {
-        public RoomWithDoor (string name, string decoration, string doorDescription) : base (name, decoration)
+        public RoomWithDoor (string name, string decoration, string doorDescription, string hidingPlace) : base(name, decoration, hidingPlace)
         {
             DoorDescription = doorDescription;
         }
